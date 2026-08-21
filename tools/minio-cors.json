@@ -1,0 +1,15 @@
+{
+  "CORSRules": [
+    {
+      "AllowedOrigins": [
+        "https://local.outline.dev:3000",
+        "https://localhost:3000",
+        "https://vite.outline.dev:3001"
+      ],
+      "AllowedMethods": ["GET", "PUT", "POST", "HEAD", "DELETE"],
+      "AllowedHeaders": ["*"],
+      "ExposeHeaders": ["ETag", "x-amz-request-id"],
+      "MaxAgeSeconds": 3000
+    }
+  ]
+}

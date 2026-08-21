@@ -148,7 +148,12 @@ export class PluginManager {
     const rootDir = env.ENVIRONMENT === "test" ? "" : "build";
 
     glob
-      .sync(path.join(rootDir, "plugins/*/server/index.[jt]s"))
+      .sync(
+        path
+          .join(rootDir, "plugins/*/server/index.[jt]s")
+          // glob expects forward slashes; path.join uses `\` on Windows
+          .replace(/\\/g, "/")
+      )
       .forEach((filePath: string) => {
         try {
           require(path.join(process.cwd(), filePath));

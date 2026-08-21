@@ -36,6 +36,10 @@ export default () =>
       https: httpsConfig,
       allowedHosts: host ? [host] : undefined,
       cors: true,
+      // Windows: backend rebuild rewrites build/* and can EBUSY Vite's watcher.
+      watch: {
+        ignored: ["**/build/**", "**/node_modules/**"],
+      },
       fs:
         environment.NODE_ENV === "development"
           ? {
