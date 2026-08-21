@@ -24,6 +24,28 @@ import errors from "./errors";
 const koa = new Koa();
 const router = new Router();
 
+// Safari auto-requests these at the site root when adding to the home screen.
+// Without a real PNG here the catch-all SPA shell is returned and iOS falls
+// back to a generated letter icon (e.g. a white "O" on black).
+router.get(
+  [
+    "/apple-touch-icon.png",
+    "/apple-touch-icon-precomposed.png",
+    "/apple-touch-icon-180x180.png",
+    "/apple-touch-icon-180x180-precomposed.png",
+  ],
+  async (ctx) => {
+    await send(ctx, "images/icon-maskable-192.png", {
+      root: path.resolve(__dirname, "../../../public"),
+      maxAge: Day.ms * 7,
+      setHeaders: (res) => {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Content-Type", "image/png");
+      },
+    });
+  }
+);
+
 // serve public assets
 router.use(["/images/*", "/email/*", "/fonts/*"], async (ctx, next) => {
   let done;

@@ -870,10 +870,11 @@ export class Environment {
     this.toOptionalString(environment.SEARCH_PROVIDER) ?? "postgres";
 
   /**
-   * The product name
+   * The product name shown in the UI and as the iOS/Android home screen label.
    */
   @Public
-  public APP_NAME = "Outline";
+  @IsOptional()
+  public APP_NAME = this.toOptionalString(environment.APP_NAME) ?? "Outline";
 
   /**
    * Gravity constant for time decay in popularity scoring. Higher values cause

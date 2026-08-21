@@ -154,32 +154,17 @@ export const renderApp = async (
     <link rel="sitemap" type="application/xml" href="/api/shares.sitemap?id=${escape(options.rootShareId || shareId)}">
     `;
   } else {
+    const appleTouchIcon = `${env.CDN_URL ?? ""}/images/icon-maskable-192.png`;
     headTags += prefetchTags;
     headTags += `
     <link rel="manifest" href="/static/manifest.webmanifest" />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="${env.CDN_URL ?? ""}/images/icon-maskable-192.png"
-      sizes="192x192"
-    />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="${env.CDN_URL ?? ""}/images/icon-maskable-512.png"
-      sizes="512x512"
-    />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="${env.CDN_URL ?? ""}/images/icon-maskable-1024.png"
-      sizes="1024x1024"
-    />
+    <meta name="apple-mobile-web-app-title" content="${escape(env.APP_NAME)}" />
+    <link rel="apple-touch-icon" href="${escape(appleTouchIcon)}" />
     <link
       rel="search"
       type="application/opensearchdescription+xml"
       href="/opensearch.xml"
-      title="Outline"
+      title="${escape(env.APP_NAME)}"
     />
     `;
   }
