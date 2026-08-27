@@ -1120,7 +1120,7 @@
   "Please try again or contact support if the problem persists": "Please try again or contact support if the problem persists",
   "No documents found for your search filters.": "No documents found for your search filters.",
   "Personal keys": "Personal keys",
-  "Create personal API keys to authenticate with the API and programatically control\n      your workspace's data. For more details see the <em>developer documentation</em>.": "Create personal API keys to authenticate with the API and programatically control\n      your workspace's data. For more details see the <em>developer documentation</em>.",
+  "Create personal API keys to authenticate with the API and programatically control your workspace's data. For more details see the <em>developer documentation</em>.": "Create personal API keys to authenticate with the API and programatically control your workspace's data. For more details see the <em>developer documentation</em>.",
   "API keys have been disabled by an admin for your account": "API keys have been disabled by an admin for your account",
   "Application access": "Application access",
   "Manage which third-party and internal applications have been granted access to your {{ appName }} account.": "Manage which third-party and internal applications have been granted access to your {{ appName }} account.",

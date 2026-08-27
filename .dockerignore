@@ -17,6 +17,7 @@ build
 docker-compose.yml
 node_modules
 .yarn
+server/config/certs/**
 **/*.test.ts
 **/*.test.tsx
 **/*.test.js

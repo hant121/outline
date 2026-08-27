@@ -292,8 +292,8 @@ function SuggestionsMenu<T extends MenuItem>(props: Props<T>) {
         Math.max(
           0,
           selection.from -
-            (props.search ?? "").length -
-            (trimTrigger ? triggerLength : 0)
+          (props.search ?? "").length -
+          (trimTrigger ? triggerLength : 0)
         ),
         selection.to
       )
@@ -1050,8 +1050,8 @@ function SuggestionsMenu<T extends MenuItem>(props: Props<T>) {
                         ? insertItem.placeholder
                         : insertItem.title
                           ? t("Paste a {{service}} link…", {
-                              service: insertItem.title,
-                            })
+                            service: insertItem.title,
+                          })
                           : `${t("Paste a link")}…`
                     }
                     onKeyDown={handleLinkInputKeydown}
@@ -1083,7 +1083,7 @@ function SuggestionsMenu<T extends MenuItem>(props: Props<T>) {
         <BouncyPopoverContent
           side="bottom"
           align="start"
-          width={280}
+          width={310}
           shrink
           style={{
             padding: 0,
@@ -1108,8 +1108,8 @@ function SuggestionsMenu<T extends MenuItem>(props: Props<T>) {
                     ? insertItem.placeholder
                     : insertItem.title
                       ? t("Paste a {{service}} link…", {
-                          service: insertItem.title,
-                        })
+                        service: insertItem.title,
+                      })
                       : `${t("Paste a link")}…`
                 }
                 onKeyDown={handleLinkInputKeydown}
